@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add Movies to the List";
+}
+@model Assignment3.Models.AddMoviesModel
+<div>
+    <form asp-action="AddMovies" method="post">
+        <div>
+            <label asp-for="category">Category</label>
+            <input asp-for="category" />
+        </div>
+        <div>
+            <label asp-for="title">Title</label>
+            <input asp-for="title" />
+        </div>
+        <div>
+            <label asp-for="year">Year</label>
+            <input asp-for="year" />
+        </div>
+        <div>
+            <label asp-for="director">Director</label>
+            <input asp-for="director" />
+        </div>
+        <div>
+            <label asp-for="rating">Rating</label>
+            <select asp-for="rating">
+                <option value="">Select One</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="edited">Edited</label>
+            <select asp-for="edited">
+                <option value="">Select One</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="lentto">Lent To:</label>
+            <input asp-for="lentto" />
+        </div>
+        <div>
+            <label asp-for="notes">Notes</label>
+            <input asp-for="notes" />
+        </div>
+
+        <button type="submit">Add Movie</button>
+    </form>
+</div>
