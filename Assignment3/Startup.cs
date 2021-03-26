@@ -21,7 +21,7 @@ namespace Assignment3
         {
             Configuration = configuration;
         }
-
+        //maybe make this public
         private IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.

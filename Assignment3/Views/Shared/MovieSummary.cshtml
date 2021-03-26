@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Assignment3.Models.AddMoviesModel
+<tr>
+    <!--Headings-->
+    <td>@Model.category</td>
+    <td>@Model.title</td>
+    <td>@Model.year</td>
+    <td>@Model.director</td>
+    <td>@Model.rating</td>
+    <td>@Model.edited</td>
+    <td>@Model.lentto</td>
+    <td>@Model.notes</td>
+    <!--Edit button-->
+    <td>
+        <form id="@Model.MovieID" method="post">
+            <input type="hidden" asp-for="MovieID" />
+            <input type="hidden" asp-for="category" />
+            <input type="hidden" asp-for="title" />
+            <input type="hidden" asp-for="year" />
+            <input type="hidden" asp-for="director" />
+            <input type="hidden" asp-for="rating" />
+            <input type="hidden" asp-for="edited" />
+            <input type="hidden" asp-for="lentto" />
+            <input type="hidden" asp-for="notes" />
+            
+            <span class="card-text p1">
+                <button class="btn btn-info" type="submit">Edit</button>
+            </span>
+        </form>
+    </td>
+    <td>
+        <!--Delete Button-->
+        <form id="@Model.MovieID" asp-action="DeleteMovie" method="post">
+            <input type="hidden" asp-for="MovieID" />
+            <input type="hidden" asp-for="category" />
+            <input type="hidden" asp-for="title" />
+            <input type="hidden" asp-for="year" />
+            <input type="hidden" asp-for="director" />
+            <input type="hidden" asp-for="rating" />
+            <input type="hidden" asp-for="edited" />
+            <input type="hidden" asp-for="lentto" />
+            <input type="hidden" asp-for="notes" />
+            <span class="card-text p1">
+                <button class="btn btn-danger" type="submit">Delete</button>
+
+            </span>
+        </form>
+
+
+    </td>
+</tr>

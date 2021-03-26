@@ -4,26 +4,30 @@
 @{
     ViewData["Title"] = "Movie List";
 }
-@model IEnumerable<Assignment3.Models.AddMoviesModel>
+@model IEnumerable<AddMoviesModel>
 <div>
     <h2>Here are the movies currently on the list</h2>
     <table>
         <thead>
-            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To</th><th>Notes</th></tr>
+            <tr>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Lent To</th>
+                <th>Notes</th>
+                <th>Edit Movie Info</th>
+                <th>Delete Movie from List</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (Assignment3.Models.AddMoviesModel x in Model)
             {
-            <tr>
-                <td>@x.category</td>
-                <td>@x.title</td>
-                <td>@x.year</td>
-                <td>@x.director</td>
-                <td>@x.rating</td>
-                <td>@x.edited</td>
-                <td>@x.lentto</td>
-                <td>@x.notes</td>
-            </tr>
+                //partial view moviesummary
+                <partial name="MovieSummary" model="x" />
+            
             }
         </tbody>
     </table>
