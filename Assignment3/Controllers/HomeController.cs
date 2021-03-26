@@ -38,7 +38,7 @@ namespace Assignment3.Controllers
         {
             //TempStorage.AddApplication(addmovie);
             //replace temp storage with this
-            //_context.AddMoviesModel.Add(addmovie)
+            _context.AddMoviesModel.Add(addmovie);
             return View("Confirmation", addmovie);
         }
         //edit db movie entry
@@ -50,7 +50,7 @@ namespace Assignment3.Controllers
         [HttpPost]
         public IActionResult EditMovies(AddMoviesModel addmovie)
         {
-            _context.Movies.Update(addmovie);
+            _context.AddMoviesModel.Update(addmovie);
             _context.SaveChanges();
             return View("EditConfirmation", addmovie);
         }
@@ -58,10 +58,10 @@ namespace Assignment3.Controllers
         [HttpPost]
         public IActionResult DeleteMovies(AddMoviesModel addmovie)
         {
-            IQueryable<AddMoviesModel> moviesList = _context.Movies.Where(m => m.MovieID == addmovie.MovieID);
+            IQueryable<AddMoviesModel> moviesList = _context.AddMoviesModel.Where(m => m.MovieID == addmovie.MovieID);
             foreach (var x in moviesList)
             {
-                _context.Movies.Remove(x);
+                _context.AddMoviesModel.Remove(x);
             }
             _context.SaveChanges();
             return View("DeleteConfirmation");
@@ -70,7 +70,7 @@ namespace Assignment3.Controllers
         public IActionResult MovieList()
         {
             //switch from temp storage to sqlite db
-            return View(_context.Movies.Where(x => x.title != "Independence Day"));
+            return View(_context.AddMoviesModel.Where(x => x.title != "Independence Day"));
             //return View(TempStorage.Movies.Where(x => x.title != "Independence Day"));
         }
 
