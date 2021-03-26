@@ -12,6 +12,6 @@ namespace Assignment3.Models
         {
             _context = context;
         }
-        public IQueryable<AddMoviesModel> Movies => _context.Movies;
+        public IQueryable<AddMoviesModel> AddMoviesModel => _context.AddMoviesModel;
     }
 }

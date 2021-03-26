@@ -7,6 +7,6 @@ namespace Assignment3.Models
 {
     public interface IMovieRepository
     {
-        IQueryable<AddMoviesModel> Movies { get; }
+        IQueryable<AddMoviesModel> AddMoviesModel { get; }
     }
 }
